@@ -1,9 +1,8 @@
 'use strict';
-const fs = require('node:fs');
-
-function cat(fileName) {
-  const content = fs.readFile(fileName, 'utf8', () => {});
-  console.log(content);
+const fs = require('fs');
+const fileName = './test.txt';
+for (let count = 0; count < 30; count++) {
+  fs.appendFile(fileName, 'おはようございます\n', 'utf8', () => {});
+  fs.appendFile(fileName, 'こんにちは\n', 'utf8', () => {});
+  fs.appendFile(fileName, 'こんばんは\n', 'utf8', () => {});
 }
-
-cat(process.argv[2]);
